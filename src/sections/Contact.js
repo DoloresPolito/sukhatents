@@ -1,15 +1,21 @@
 import React from "react";
 import styled from "styled-components";
 import { Title } from "../styles/styles";
-
+import calendar from "../../public/assets/images/web_calendario.png";
+import Image from "next/image";
 const FormContainer = styled.form`
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+
   width: 500px;
   padding: 30px 50px;
-  margin-left:100px;
+  margin-left: 100px;
 
+
+  @media screen and (max-width: 840px) {
+    display: none;
+  }
 `;
 
 const Row = styled.div`
@@ -56,8 +62,6 @@ const InputContainer = styled.div`
   }
 `;
 
-
-
 const Button = styled.button`
   padding: 10px 20px;
   background-color: #6a6f58;
@@ -67,22 +71,20 @@ const Button = styled.button`
   align-self: flex-end;
 
   color: #ffffff; /* Estilos para el color del placeholder */
-    font-family: "Barlow Condensed", sans-serif;
-    font-style: regular;
-    font-weight: 600;
-    font-size: 18px;
-    margin-left: 18px;
-    border-bottom: 1px solid #ccc;
-   
+  font-family: "Barlow Condensed", sans-serif;
+  font-style: regular;
+  font-weight: 600;
+  font-size: 18px;
+  margin-left: 18px;
+  border-bottom: 1px solid #ccc;
 `;
 
 const Formulario = () => {
   return (
     <ContactSection id="contact">
       <ContactContainer>
-     
         <FormContainer>
-        <ContactTitle>CONTACTO</ContactTitle>
+          <ContactTitle>CONTACTO</ContactTitle>
           <Row>
             <Column>
               <InputContainer>
@@ -97,9 +99,9 @@ const Formulario = () => {
             <Column>
               <InputContainer>
                 <input
-                  type="email"
-                  id="email"
-                  name="email"
+                  type="text"
+                  id="date"
+                  name="date"
                   placeholder="Fecha del evento"
                 />
               </InputContainer>
@@ -110,8 +112,8 @@ const Formulario = () => {
               <InputContainer>
                 <input
                   type="text"
-                  id="subject"
-                  name="subject"
+                  id="phone"
+                  name="phone"
                   placeholder="Teléfono"
                 />
               </InputContainer>
@@ -120,8 +122,8 @@ const Formulario = () => {
               <InputContainer>
                 <input
                   type="text"
-                  id="subject"
-                  name="subject"
+                  id="place"
+                  name="place"
                   placeholder="Lugar del evento"
                 />
               </InputContainer>
@@ -131,15 +133,20 @@ const Formulario = () => {
           <Row>
             <Column>
               <InputContainer>
-                <input type="text" id="name" name="name" placeholder="Email" />
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Email"
+                />
               </InputContainer>
             </Column>
             <Column>
               <InputContainer>
                 <input
-                  type="email"
-                  id="email"
-                  name="email"
+                  type="text"
+                  id="people"
+                  name="people"
                   placeholder="Cantidad de personas"
                 />
               </InputContainer>
@@ -149,7 +156,13 @@ const Formulario = () => {
           <Row fullWidth>
             <FullWidthColumn>
               <InputContainer>
-                <input as="textarea" id="message" name="message" rows="4" placeholder="Mensaje"  />
+                <input
+                  as="text"
+                  id="message"
+                  name="message"
+                  rows="4"
+                  placeholder="Mensaje"
+                />
               </InputContainer>
             </FullWidthColumn>
           </Row>
@@ -158,6 +171,11 @@ const Formulario = () => {
           </Row>
         </FormContainer>
       </ContactContainer>
+
+      <Box>
+        <BoxText>CONSULTÁ LA FECHA<br/> DE TU EVENTO </BoxText>
+        <Image src={calendar} alt="calendar" />
+      </Box>
     </ContactSection>
   );
 };
@@ -173,11 +191,37 @@ const ContactContainer = styled.div`
   background-color: #6a6f58;
   display: flex;
   flex-direction: column;
+  position: relative;
 `;
 
 const ContactTitle = styled(Title)`
-color:#ffffff;
-margin-left: 20px;
+  color: #ffffff;
+  margin-left: 20px;
+`;
+
+const Box = styled.div`
+  height: 410px !important;
+  width: 350px;
+  background-color: #e0dcc7;
+  position: relative;
+  top: -435px;
+  left: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (max-width: 1300px) {
+    display: none;
+  }
+
+
+`;
+
+const BoxText = styled(Title)`
+font-size: 24px;
+line-height: 28px;
+margin-left: -110px;
 
 `
 export default Formulario;

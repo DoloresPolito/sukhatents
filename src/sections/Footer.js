@@ -18,11 +18,14 @@ const LeftColumn = styled.div`
   flex: 1;
   padding-left: 80px;
 
-  img{
+  @media screen and (max-width: 775px) {
+    justify-self: center;
+    margin: 0 auto;
+  }
+
+  img {
     height: 70px;
     width: 100px;
-
- 
   }
 `;
 
@@ -31,28 +34,31 @@ const RightColumn = styled.div`
   justify-content: flex-end;
   flex: 2;
 
-  img{
+  @media screen and (max-width: 775px) {
+
+   display: none;
+  }
+
+  img {
     height: 20px;
     width: 20px;
     padding-right: 10px;
     /* margin-top: 3px;
     padding-top: 3px; */
- 
   }
 
-  a{
+  a {
     text-decoration: none;
 
-    font-family: 'Barlow Condensed', sans-serif;
-  color: #6a6f58;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 30px;
-  letter-spacing: 1px;
+    font-family: "Barlow Condensed", sans-serif;
+    color: #6a6f58;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 30px;
+    letter-spacing: 1px;
   }
 
   .uno {
-
     width: 200px;
     display: flex;
     flex-direction: column;
@@ -76,11 +82,10 @@ const FooterNavText = styled(Text)`
 `;
 
 const FooterTitle = styled(Text)`
-
-font-size: 20px;
-font-weight: 600;
-letter-spacing: 1.5px;
-`
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+`;
 
 const Footer = () => {
   return (
@@ -89,56 +94,49 @@ const Footer = () => {
         <Image src={logo} alt="logo" />
 
         <NavLinks>
-                <Link
-                  to="about"
-                  spy={true}
-                  smooth={true}
-                  offset={30}
-                  duration={800}
-                >
-                  <FooterNavText>Quienes somos?</FooterNavText>
-                </Link>
+          <Link to="about" spy={true} smooth={true} offset={30} duration={800}>
+            <FooterNavText>Quienes somos?</FooterNavText>
+          </Link>
 
-                <Link
-                  to="technical"
-                  spy={true}
-                  smooth={true}
-                  offset={30}
-                  duration={800}
-                >
-                  <FooterNavText>Carpas sukha</FooterNavText>
-                </Link>
+          <Link
+            to="technical"
+            spy={true}
+            smooth={true}
+            offset={30}
+            duration={800}
+          >
+            <FooterNavText>Carpas sukha</FooterNavText>
+          </Link>
 
-                <Link
-                  to="mission"
-                  spy={true}
-                  smooth={true}
-                  offset={30}
-                  duration={800}
-                >
-                  <FooterNavText>Misión - Visión</FooterNavText>
-                </Link>
+          <Link
+            to="mission"
+            spy={true}
+            smooth={true}
+            offset={30}
+            duration={800}
+          >
+            <FooterNavText>Misión - Visión</FooterNavText>
+          </Link>
 
-                <Link
-                  to="complements"
-                  spy={true}
-                  smooth={true}
-                   offset={30}
-                  duration={800}
-                >
-                  <FooterNavText>Complementos</FooterNavText>
-                </Link>
-                <Link
-                  to="contact"
-                  spy={true}
-                  smooth={true}
-                   offset={30}
-                  duration={800}
-                >
-                <FooterNavText>Contacto</FooterNavText>
-                </Link>
-              </NavLinks>
-     
+          <Link
+            to="complements"
+            spy={true}
+            smooth={true}
+            offset={30}
+            duration={800}
+          >
+            <FooterNavText>Complementos</FooterNavText>
+          </Link>
+          <Link
+            to="contact"
+            spy={true}
+            smooth={true}
+            offset={30}
+            duration={800}
+          >
+            <FooterNavText>Contacto</FooterNavText>
+          </Link>
+        </NavLinks>
       </LeftColumn>
       {/* <CenterText>Sukha Tents | 2023</CenterText> */}
       <RightColumn>
@@ -184,20 +182,10 @@ const NavLinks = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 10px;
-`;
 
-const NavLink = styled.p`
-  /* Estilos para cada enlace */
-  text-decoration: none;
-  /* margin-right: ${(props) => (props.last ? "0" : "50px")}; */
-  margin-right: 50px;
-  font-family: "Barlow Condensed", sans-serif;
-  color: #6a6f58;
-  font-weight: 400;
-  font-size: 17px;
-  line-height: 30px;
-  letter-spacing: 1px;
-  cursor: pointer;
+  @media screen and (max-width: 775px) {
+
+  }
 `;
 
 export default Footer;

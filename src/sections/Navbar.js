@@ -25,6 +25,8 @@ const Navbar = () => {
 
   const medium = 1200;
 
+
+
   return (
     <>
       <NavbarSection>
@@ -47,6 +49,7 @@ const Navbar = () => {
                   smooth={true}
                   offset={10}
                   duration={800}
+         
                 >
                   <NavLink>Quienes somos?</NavLink>
                 </Link>
@@ -55,7 +58,7 @@ const Navbar = () => {
                   to="technical"
                   spy={true}
                   smooth={true}
-                  offset={10}
+                  offset={-30}
                   duration={800}
                 >
                   <NavLink>Carpas sukha</NavLink>
@@ -65,7 +68,7 @@ const Navbar = () => {
                   to="mission"
                   spy={true}
                   smooth={true}
-                  offset={10}
+                  offset={-130}
                   duration={800}
                 >
                   <NavLink>Misión - Visión</NavLink>
@@ -95,7 +98,7 @@ const Navbar = () => {
             <>
               <Hamburger toggled={isOpen} toggle={setOpen} />
 
-              <Menu open={isOpen} />
+              <Menu open={isOpen} setOpen={setOpen}/>
             </>
           )}
         </NavbarContainer>

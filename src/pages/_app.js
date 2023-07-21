@@ -14,8 +14,7 @@ const MyApp = ({ Component, pageProps }) => {
         <meta name="theme-color" content="#000000" />
         <meta
           name="description"
-          content="Defi Automation Platform. Interact with DeFi in a simpler,
-          safer way through Smart Vaults"
+          content="Alquiler de carpas para eventos"
         />
       </Head>
       <ParallaxProvider>

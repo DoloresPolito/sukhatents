@@ -2,18 +2,25 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-scroll";
 
-const Menu = ({ open }) => {
+const Menu = ({ open, setOpen }) => {
+
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+
   return (
     <StyledMenu open={open} aria-label="menu">
-      <Link to="about" spy={true} smooth={true} offset={70} duration={800}>
+      <Link to="about" spy={true} smooth={true} offset={30} duration={800}          onClick={() => handleClose()}>
         <NavLink>Quienes somos?</NavLink>
       </Link>
 
-      <Link to="technical" spy={true} smooth={true} offset={70} duration={800}>
+      <Link to="technical" spy={true} smooth={true} offset={-30} duration={800} onClick={() => handleClose()}>
         <NavLink>Carpas sukha</NavLink>
       </Link>
 
-      <Link to="mission" spy={true} smooth={true} offset={70} duration={800}>
+      <Link to="mission" spy={true} smooth={true} offset={-130} duration={800} onClick={() => handleClose()}>
         <NavLink>Misión - Visión</NavLink>
       </Link>
 
@@ -21,8 +28,9 @@ const Menu = ({ open }) => {
         to="complements"
         spy={true}
         smooth={true}
-        offset={70}
+        offset={30}
         duration={800}
+        onClick={() => handleClose()}
       >
         <NavLink>Complementos</NavLink>
       </Link>
@@ -31,8 +39,9 @@ const Menu = ({ open }) => {
         to="contact"
         spy={true}
         smooth={true}
-        offset={70}
+        offset={30}
         duration={800}
+        onClick={() => handleClose()}
       >
         <NavLink>Contacto</NavLink>
       </Link>
