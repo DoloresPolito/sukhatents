@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Navbar from "./Navbar";
 import Image from "next/image";
-import image from "../../public/assets/images/port.jpeg";
+import image from "../../public/assets/newimages/home.jpg";
 
 const Cover = () => {
   return (

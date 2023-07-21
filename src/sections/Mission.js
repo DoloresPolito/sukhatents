@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Title, Text } from "../styles/styles";
 import Image from 'next/image'
-import image from '../../public/assets/images/MisionVision.jpg'
+import image from '../../public/assets/newimages/m-v.jpg'
 import { Parallax } from "react-scroll-parallax";
 
 const Mission = () => {

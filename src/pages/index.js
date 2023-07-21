@@ -15,7 +15,7 @@ export default function Home() {
       <Technical/>
       <Mission />
       <Complements />
-       {/* <Contact/> */}
+       <Contact/>
       <ScrollToTop
         style={{
           backgroundColor: "transparent",
@@ -26,7 +26,7 @@ export default function Home() {
         color="#6a6f58"
         smooth
       />
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }

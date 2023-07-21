@@ -15,13 +15,17 @@ const Technical = () => {
           <TechnicalTitle>CARPAS SUKHA</TechnicalTitle>
           <Box>
             <Measures>
-              <TechnicalSubtitle>Medidas</TechnicalSubtitle>
+              <TitleDiv>
+                <TechnicalSubtitle>Medidas</TechnicalSubtitle>
+                <Line />
+              </TitleDiv>
+
               <TechnicalImages>
                 <div>
-                <Image src={front} alt="front" />
+                  <Image src={front} alt="front" />
                 </div>
                 <div>
-                <Image src={side} alt="side" />
+                  <Image src={side} alt="side" />
                 </div>
               </TechnicalImages>
 
@@ -35,9 +39,12 @@ const Technical = () => {
               </TechnicalText>
             </Measures>
 
-
             <Capacity>
+              <TitleDiv>
               <TechnicalSubtitle>Capacidad</TechnicalSubtitle>
+              <Line/>
+              </TitleDiv>
+            
               <TechnicalImages>
                 <div>
                   <Image src={capacity1} alt="capacity1" />
@@ -106,15 +113,11 @@ const TechnicalImages = styled.div`
   height: auto;
   margin-left: 10px;
 
-
-@media screen and (max-width: 670px) {
-
-  flex-direction: column !important;
-  justify-content: center;
-align-items: center;
-}
-
-
+  @media screen and (max-width: 670px) {
+    flex-direction: column !important;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 const Measures = styled.div`
@@ -126,7 +129,6 @@ const Measures = styled.div`
 
   height: 200px;
   height: auto;
-
 
   @media screen and (max-width: 670px) {
     min-width: 340px;
@@ -152,7 +154,6 @@ const Capacity = styled.div`
   @media screen and (max-width: 670px) {
     min-width: 340px;
     padding: 20px;
- 
   }
 
   @media screen and (max-width: 360px) {
@@ -165,7 +166,20 @@ const PhotoText = styled(Text)`
   max-width: 200px;
   align-self: center;
   justify-self: center;
+`;
 
+const TitleDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+const Line = styled.div`
+  border-top: 2px solid #6a6f58;
+  height: 2px;
+  width: 90%;
+  justify-self: center;
+  margin-top: 47px;
+  margin-left: 10px;
 `;
 
 export default Technical;

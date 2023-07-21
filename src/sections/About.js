@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Title, Text } from "../styles/styles";
 import Image from "next/image";
-import image from "../../public/assets/images/quienes1.jpeg";
+import image from "../../public/assets/newimages/q-s.jpg";
 
 const About = () => {
   return (
