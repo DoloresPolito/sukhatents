@@ -7,15 +7,25 @@ const FormContainer = styled.form`
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-
   width: 500px;
   padding: 30px 50px;
   margin-left: 100px;
 
 
+
   @media screen and (max-width: 840px) {
-    display: none;
+    padding: 30px 0px;
   }
+
+  @media screen and (max-width: 600px) {
+    margin-left: 20px;
+  }
+
+  @media screen and (max-width: 520px) {
+    width: auto;
+  }
+
+  
 `;
 
 const Row = styled.div`
@@ -24,6 +34,17 @@ const Row = styled.div`
   margin-right: ${(props) => (props.fullWidth ? "0" : "20px")};
   margin-bottom: 20px;
   gap: 30px;
+
+  @media screen and (max-width: 740px) {
+    flex-direction: column;
+    width: 300px;
+  }
+
+  @media screen and (max-width: 405px) {
+    width: 250px;
+  }
+
+
 `;
 
 // Estilos de las columnas
@@ -31,6 +52,7 @@ const Column = styled.div`
   flex: 1;
   padding: 0px 20px;
   /* border: 1px solid #ccc; */
+
 `;
 
 // Estilos para la columna de ancho completo
@@ -50,8 +72,16 @@ const InputContainer = styled.div`
     border: none;
     border-bottom: 1px solid #ccc;
     background-color: #6a6f58;
+    outline: none;
+    color: white;
+
+
   }
 
+  .last{
+      max-width: 445px;
+      margin-left: 9px;
+    }
   input::placeholder {
     color: #ffffff; /* Estilos para el color del placeholder */
     font-family: "Barlow Condensed", sans-serif;
@@ -75,8 +105,10 @@ const Button = styled.button`
   font-style: regular;
   font-weight: 600;
   font-size: 18px;
-  margin-left: 18px;
+  /* margin-left: 18px; */
   border-bottom: 1px solid #ccc;
+  max-width: 70px;
+  margin-left: 405px;
 `;
 
 const Formulario = () => {
@@ -162,6 +194,7 @@ const Formulario = () => {
                   name="message"
                   rows="4"
                   placeholder="Mensaje"
+                  className="last"
                 />
               </InputContainer>
             </FullWidthColumn>
@@ -192,6 +225,10 @@ const ContactContainer = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
+  @media screen and (max-width: 405px) {
+    width: 100%;
+  }
+
 `;
 
 const ContactTitle = styled(Title)`
