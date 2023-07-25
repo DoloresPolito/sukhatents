@@ -7,7 +7,7 @@ import Image from "next/image";
 
 
 const Formulario = () => {
-
+  const [messageSent, setMessageSent] = useState(false);
 
 
   const [formData, setFormData] = useState({
@@ -34,6 +34,7 @@ const Formulario = () => {
     try {
       await axios.post('../api/send-email', formData);
       alert('Correo enviado correctamente.');
+      setMessageSent(true);
     } catch (error) {
       alert('Error al enviar el correo.');
       console.error(error);
@@ -43,8 +44,22 @@ const Formulario = () => {
 
   return (
     <ContactSection id="contact">
-      <ContactContainer>
-        <FormContainer onSubmit={handleSubmit}>
+    
+
+
+
+      {messageSent ? (
+         <MessageSentContainer>
+            <div>
+                       <ContactTitle>MUCHAS GRACIAS POR TU MENSAJE</ContactTitle>
+
+              <ContactSubTitle> TE RESPONDEREMOS LO ANTES POSIBLE</ContactSubTitle>
+          
+            </div>
+            </MessageSentContainer>
+          ) : (<>
+            <ContactContainer>
+           <FormContainer onSubmit={handleSubmit}>
           <ContactTitle>CONTACTO</ContactTitle>
           <Row>
             <Column>
@@ -147,7 +162,11 @@ const Formulario = () => {
             <Button type="submit">ENVIAR</Button>
           </Row>
         </FormContainer>
-      </ContactContainer>
+        </ContactContainer>
+          
+          </>)}
+       
+
 
       <Box>
         <BoxText>CONSULTÁ LA FECHA<br/> DE TU EVENTO </BoxText>
@@ -159,7 +178,11 @@ const Formulario = () => {
 
 const ContactSection = styled.div`
   width: 100%;
-  height: auto;
+  height: 500px;
+
+  @media screen and (max-width: 740px) {
+    height: 660px;
+  }
 `;
 
 const ContactContainer = styled.div`
@@ -173,29 +196,91 @@ const ContactContainer = styled.div`
     width: 100%;
   }
 
+
 `;
+
+const MessageSentContainer = styled.div`
+  width: 80%;
+  height: 400px;
+  background-color: #6a6f58;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: flex-start;
+  /* align-items: center; */
+  color: #ffffff;
+  padding-left: 150px;
+  padding-top: 80px;
+
+  @media screen and (max-width: 1040px) {
+    padding-left: 50px;
+  }
+
+
+  @media screen and (max-width: 405px) {
+    width: 100%;
+    padding-left: 0px;
+  }
+
+  div{
+    max-width: 500px;
+
+    @media screen and (max-width: 1040px) {
+      max-width: 350px;
+  }
+
+  @media screen and (max-width: 400px) {
+      max-width: 300px;
+      background-color: red;
+      padding-left: 15px;
+  }
+  }
+
+
+
+
+`
 
 const ContactTitle = styled(Title)`
   color: #ffffff;
   margin-left: 20px;
 `;
 
+const ContactSubTitle = styled(Title)`
+  color: #ffffff;
+  margin-left: 20px;
+  font-size: 19px;
+`;
+
 const Box = styled.div`
-  height: 410px !important;
-  width: 350px;
+  height: 410px !important; 
+   width: 350px; 
   background-color: #e0dcc7;
   position: relative;
-  top: -435px;
-  left: 900px;
+  top: -440px;
+  left: 830px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  @media screen and (max-width: 1300px) {
-    display: none;
+
+
+  @media screen and (max-width: 1200px) {
+    left: 670px;
   }
 
+  @media screen and (max-width: 1040px) {
+    left: 650px;
+  }
+
+  @media screen and (max-width: 1000px) {
+    left: 570px;
+  }
+
+  @media screen and (max-width: 1000px) {
+   display: none;
+  }
 
 `;
 
@@ -215,13 +300,17 @@ const FormContainer = styled.form`
   margin-left: 100px;
 
 
+  @media screen and (max-width: 1000px) {
+    margin-left: 10px;
+  }
+
 
   @media screen and (max-width: 840px) {
     padding: 30px 0px;
   }
 
   @media screen and (max-width: 600px) {
-    margin-left: 20px;
+    margin-left: 14px;
   }
 
   @media screen and (max-width: 520px) {

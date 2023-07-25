@@ -38,7 +38,7 @@ const Footer = () => {
               to="about"
               spy={true}
               smooth={true}
-              offset={30}
+              offset={10}
               duration={800}
             >
               <FooterNavText>Quienes somos?</FooterNavText>
@@ -48,7 +48,7 @@ const Footer = () => {
               to="technical"
               spy={true}
               smooth={true}
-              offset={30}
+              offset={-30}
               duration={800}
             >
               <FooterNavText>Carpas sukha</FooterNavText>
@@ -58,7 +58,7 @@ const Footer = () => {
               to="mission"
               spy={true}
               smooth={true}
-              offset={30}
+              offset={-140}
               duration={800}
             >
               <FooterNavText>Misión - Visión</FooterNavText>
@@ -68,7 +68,7 @@ const Footer = () => {
               to="complements"
               spy={true}
               smooth={true}
-              offset={30}
+              offset={10}
               duration={800}
             >
               <FooterNavText>Complementos</FooterNavText>
@@ -77,7 +77,7 @@ const Footer = () => {
               to="contact"
               spy={true}
               smooth={true}
-              offset={30}
+              offset={10}
               duration={800}
             >
               <FooterNavText>Contacto</FooterNavText>
