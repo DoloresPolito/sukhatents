@@ -1,4 +1,5 @@
 import nodemailer from "nodemailer";
+require('dotenv').config();
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
@@ -12,19 +13,15 @@ export default async function handler(req, res) {
 } = req.body;
 
 
-  const SMTP_HOST = "smtp.gmail.com";
-  const SMTP_PORT = 465;
-  const SMTP_USER = "sukhatents@gmail.com";
-  const SMTP_PASS = "vqoxujdbiliwcdju";
 
   try {
     // Configurar el transporte de nodemailer con tus credenciales SMTP
     const transporter = nodemailer.createTransport({
-      host: SMTP_HOST,
-      port: SMTP_PORT,
+      host: process.env.SMTP_HOST,
+      port: process.env.SMTP_PORT,
       auth: {
-        user: SMTP_USER,
-        pass: SMTP_PASS,
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
       },
     });
 
