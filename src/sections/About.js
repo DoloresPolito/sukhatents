@@ -3,17 +3,21 @@ import styled from "styled-components";
 import { Title, Text } from "../styles/styles";
 import Image from "next/image";
 import image from "../../public/assets/newimages/q-s.jpg";
-
+import { Parallax } from "react-scroll-parallax";
 const About = () => {
   return (
     <AboutSection id="about">
       <ImageWrapper>
         <Image src={image} alt="quienes somos" className="about-image" />
       </ImageWrapper>
-
+ 
       <Content>
+
         <div>
+        <Parallax speed={-2}> 
           <AboutTitle>¿QUIÉNES SOMOS?</AboutTitle>
+          </Parallax> 
+          {/* <Parallax speed={-3}>  */}
           <AboutText>
             Somos una empresa especializada en el{" "}
             <b>
@@ -31,8 +35,11 @@ const About = () => {
             clientes una experiencia única, asegurándonos de que cada detalle
             esté cuidado para que su evento sea un éxito asegurado.
           </AboutText>
+          {/* </Parallax>  */}
         </div>
+
       </Content>
+
     </AboutSection>
   );
 };

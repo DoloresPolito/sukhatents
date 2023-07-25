@@ -6,13 +6,15 @@ import front from "../../public/assets/icons/web_frente.png";
 import side from "../../public/assets/icons/web_cenital.png";
 import capacity1 from "../../public/assets/icons/web_122.png";
 import capacity2 from "../../public/assets/icons/web_152.png";
-
+import { Parallax } from "react-scroll-parallax";
 const Technical = () => {
   return (
     <>
       <TechnicalSection id="technical">
         <TechnicalContainer>
+        <Parallax speed={-2}> 
           <TechnicalTitle>CARPAS SUKHA</TechnicalTitle>
+          </Parallax> 
           <Box>
             <Measures>
               <TitleDiv>

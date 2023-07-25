@@ -6,16 +6,20 @@ import traslado from "../../public/assets/icons/traslado.png";
 import montaje from "../../public/assets/icons/montaje.png";
 import pisos from "../../public/assets/icons/pisos.png";
 import clima from "../../public/assets/icons/clima.png";
+import { Parallax } from "react-scroll-parallax";
 const Complements = () => {
   return (
     <>
       <ComplementsSection id="complements">
         <ComplementsContainer>
+             <Parallax speed={2}> 
           <ComplementsTitle>COMPLEMENTOS</ComplementsTitle>
+          </Parallax> 
           <ComplementsText>
             Ofrecemos un completo servicio de alquiler de carpas, el cual
             incluye:
           </ComplementsText>
+
           <IconsContainer>
             <Box>
               <Image src={traslado} alt="traslado" />
@@ -42,6 +46,8 @@ const Complements = () => {
             </Box>
           </IconsContainer>
         </ComplementsContainer>
+
+        <Parallax speed={3}> 
         <Bottom>
           <BottomText>
             Además, ofrecemos una <b><i>variedad de complementos </i></b>que pueden
@@ -54,6 +60,8 @@ const Complements = () => {
             personalizada para sus necesidades de evento.
           </BottomText>
         </Bottom>
+
+        </Parallax> 
       </ComplementsSection>
     </>
   );

@@ -3,12 +3,12 @@ import styled from "styled-components";
 import { Title, Text } from "../styles/styles";
 import Image from 'next/image'
 import image from '../../public/assets/newimages/m-v.jpg'
-import { Parallax } from "react-scroll-parallax";
+// import { Parallax } from "react-scroll-parallax";
 
 const Mission = () => {
   return (
     <MissionSection id="mission">
-            {/* <Parallax speed={-8}> */}
+         
       <Box>
         <div>
           <MissionTitle>MISIÓN - VISIÓN</MissionTitle>
@@ -31,10 +31,13 @@ const Mission = () => {
         </div>
     
       </Box>
-      {/* </Parallax> */}
+ 
+
+         {/* <Parallax speed={-8}> */}
       <ImageContainer>
         <StyledImage src={image} alt="mission" className="mission" />
       </ImageContainer>
+           {/* </Parallax> */}
     </MissionSection>
   );
 };
