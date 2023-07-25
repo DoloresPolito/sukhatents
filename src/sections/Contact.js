@@ -33,7 +33,7 @@ const Formulario = () => {
 
     try {
       await axios.post('../api/send-email', formData);
-      alert('Correo enviado correctamente.');
+      // alert('Correo enviado correctamente.');
       setMessageSent(true);
     } catch (error) {
       alert('Error al enviar el correo.');
@@ -231,7 +231,6 @@ const MessageSentContainer = styled.div`
 
   @media screen and (max-width: 400px) {
       max-width: 300px;
-      background-color: red;
       padding-left: 15px;
   }
   }
