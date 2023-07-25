@@ -31,8 +31,8 @@ const ImageWrapper = styled.div`
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-fit: cover;
     object-position: center bottom;
+    /* object-position: 100% ; */
     margin-top:2px;
   }
 

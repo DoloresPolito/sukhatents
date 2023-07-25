@@ -1,8 +1,211 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
 import { Title } from "../styles/styles";
 import calendar from "../../public/assets/images/web_calendario.png";
+import axios from 'axios';
 import Image from "next/image";
+
+
+const Formulario = () => {
+
+
+
+  const [formData, setFormData] = useState({
+    name: '',
+    date:'',
+    place:'',
+    phone:'',
+    quantity:'',
+    email: '',
+    message: '',
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      await axios.post('../api/send-email', formData);
+      alert('Correo enviado correctamente.');
+    } catch (error) {
+      alert('Error al enviar el correo.');
+      console.error(error);
+    }
+
+  };
+
+  return (
+    <ContactSection id="contact">
+      <ContactContainer>
+        <FormContainer onSubmit={handleSubmit}>
+          <ContactTitle>CONTACTO</ContactTitle>
+          <Row>
+            <Column>
+              <InputContainer>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Nombre y Apellido"
+                  value={formData.name}
+                  onChange={handleChange}
+                />
+              </InputContainer>
+            </Column>
+            <Column>
+              <InputContainer>
+                <input
+                  type="text"
+                  id="date"
+                  name="date"
+                  placeholder="Fecha del evento"
+                  value={formData.date}
+                  onChange={handleChange}
+                />
+              </InputContainer>
+            </Column>
+          </Row>
+          <Row>
+            <Column>
+              <InputContainer>
+                <input
+                  type="text"
+                  id="phone"
+                  name="phone"
+                  placeholder="Teléfono"
+                  value={formData.phone}
+                  onChange={handleChange}
+                />
+              </InputContainer>
+            </Column>
+            <Column>
+              <InputContainer>
+                <input
+                  type="text"
+                  id="place"
+                  name="place"
+                  placeholder="Lugar del evento"
+                  value={formData.place}
+                  onChange={handleChange}
+                />
+              </InputContainer>
+            </Column>
+          </Row>
+
+          <Row>
+            <Column>
+              <InputContainer>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Email"
+                  value={formData.email}
+                  onChange={handleChange}
+                />
+              </InputContainer>
+            </Column>
+            <Column>
+              <InputContainer>
+                <input
+                  type="text"
+                  id="quantity"
+                  name="quantity"
+                  placeholder="Cantidad de personas"
+                  value={formData.quantity}
+                  onChange={handleChange}
+                />
+              </InputContainer>
+            </Column>
+          </Row>
+
+          <Row fullWidth>
+            <FullWidthColumn>
+              <InputContainer>
+                <input
+                  as="text"
+                  id="message"
+                  name="message"
+                  rows="4"
+                  placeholder="Mensaje"
+                  className="last"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                />
+              </InputContainer>
+            </FullWidthColumn>
+          </Row>
+          <Row>
+            <Button type="submit">ENVIAR</Button>
+          </Row>
+        </FormContainer>
+      </ContactContainer>
+
+      <Box>
+        <BoxText>CONSULTÁ LA FECHA<br/> DE TU EVENTO </BoxText>
+        <Image src={calendar} alt="calendar" />
+      </Box>
+    </ContactSection>
+  );
+};
+
+const ContactSection = styled.div`
+  width: 100%;
+  height: auto;
+`;
+
+const ContactContainer = styled.div`
+  width: 80%;
+  height: auto;
+  background-color: #6a6f58;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  @media screen and (max-width: 405px) {
+    width: 100%;
+  }
+
+`;
+
+const ContactTitle = styled(Title)`
+  color: #ffffff;
+  margin-left: 20px;
+`;
+
+const Box = styled.div`
+  height: 410px !important;
+  width: 350px;
+  background-color: #e0dcc7;
+  position: relative;
+  top: -435px;
+  left: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (max-width: 1300px) {
+    display: none;
+  }
+
+
+`;
+
+const BoxText = styled(Title)`
+font-size: 24px;
+line-height: 28px;
+margin-left: -110px;
+
+`
+
 const FormContainer = styled.form`
   display: flex;
   flex-wrap: wrap;
@@ -110,155 +313,4 @@ const Button = styled.button`
   max-width: 70px;
   margin-left: 405px;
 `;
-
-const Formulario = () => {
-  return (
-    <ContactSection id="contact">
-      <ContactContainer>
-        <FormContainer>
-          <ContactTitle>CONTACTO</ContactTitle>
-          <Row>
-            <Column>
-              <InputContainer>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder="Nombre y Apellido"
-                />
-              </InputContainer>
-            </Column>
-            <Column>
-              <InputContainer>
-                <input
-                  type="text"
-                  id="date"
-                  name="date"
-                  placeholder="Fecha del evento"
-                />
-              </InputContainer>
-            </Column>
-          </Row>
-          <Row>
-            <Column>
-              <InputContainer>
-                <input
-                  type="text"
-                  id="phone"
-                  name="phone"
-                  placeholder="Teléfono"
-                />
-              </InputContainer>
-            </Column>
-            <Column>
-              <InputContainer>
-                <input
-                  type="text"
-                  id="place"
-                  name="place"
-                  placeholder="Lugar del evento"
-                />
-              </InputContainer>
-            </Column>
-          </Row>
-
-          <Row>
-            <Column>
-              <InputContainer>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="Email"
-                />
-              </InputContainer>
-            </Column>
-            <Column>
-              <InputContainer>
-                <input
-                  type="text"
-                  id="people"
-                  name="people"
-                  placeholder="Cantidad de personas"
-                />
-              </InputContainer>
-            </Column>
-          </Row>
-
-          <Row fullWidth>
-            <FullWidthColumn>
-              <InputContainer>
-                <input
-                  as="text"
-                  id="message"
-                  name="message"
-                  rows="4"
-                  placeholder="Mensaje"
-                  className="last"
-                />
-              </InputContainer>
-            </FullWidthColumn>
-          </Row>
-          <Row>
-            <Button type="submit">ENVIAR</Button>
-          </Row>
-        </FormContainer>
-      </ContactContainer>
-
-      <Box>
-        <BoxText>CONSULTÁ LA FECHA<br/> DE TU EVENTO </BoxText>
-        <Image src={calendar} alt="calendar" />
-      </Box>
-    </ContactSection>
-  );
-};
-
-const ContactSection = styled.div`
-  width: 100%;
-  height: auto;
-`;
-
-const ContactContainer = styled.div`
-  width: 80%;
-  height: auto;
-  background-color: #6a6f58;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  @media screen and (max-width: 405px) {
-    width: 100%;
-  }
-
-`;
-
-const ContactTitle = styled(Title)`
-  color: #ffffff;
-  margin-left: 20px;
-`;
-
-const Box = styled.div`
-  height: 410px !important;
-  width: 350px;
-  background-color: #e0dcc7;
-  position: relative;
-  top: -435px;
-  left: 900px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  @media screen and (max-width: 1300px) {
-    display: none;
-  }
-
-
-`;
-
-const BoxText = styled(Title)`
-font-size: 24px;
-line-height: 28px;
-margin-left: -110px;
-
-`
 export default Formulario;
