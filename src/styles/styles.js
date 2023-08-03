@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const Title = styled.h1`
-  font-family: "Bebas Neue";
+  /* font-family: "Bebas Neue"; */
+  font-family: var(--font-bebasneue);
   color: #6a6f58;
   font-weight: 400;
   line-height: 150%;
@@ -10,7 +11,8 @@ export const Title = styled.h1`
 `;
 
 export const Text = styled.p`
- font-family: 'Barlow Semi Condensed', sans-serif;
+ /* font-family: 'Barlow Semi Condensed', sans-serif; */
+ font-family: var(--font-barlowsemicondensed);
   color: #6a6f58;
   font-style: regular;
   font-weight: 400;

@@ -116,7 +116,8 @@ const Box = styled.div`
 
   p {
     max-width: 200px;
-    font-family: "Barlow Semi Condensed", sans-serif;
+    /* font-family: "Barlow Semi Condensed", sans-serif; */
+    font-family: var(--font-barlowsemicondensed);
     color: #6a6f58;
     font-weight: 400;
     font-size: 15px;
@@ -135,7 +136,8 @@ const Bottom = styled.div`
 `;
 
 const BottomText = styled.p`
-  font-family: "Barlow Semi Condensed", sans-serif;
+  /* font-family: "Barlow Semi Condensed", sans-serif; */
+  font-family: var(--font-barlowsemicondensed);
   color: #6a6f58;
   font-weight: 400;
   font-size: 15px;

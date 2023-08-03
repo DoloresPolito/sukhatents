@@ -69,7 +69,8 @@ const NavLink = styled.p`
   text-decoration: none;
   /* margin-right: ${(props) => (props.last ? "0" : "50px")}; */
   margin-right: 50px;
-  font-family: "Barlow Condensed", sans-serif;
+  /* font-family: "Barlow Condensed", sans-serif; */
+  font-family: var(--font-barlowcondensed);
   color: #6a6f58;
   font-weight: 300;
   font-size: 17px;

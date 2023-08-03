@@ -87,7 +87,8 @@ const TechnicalTitle = styled(Title)`
 `;
 const TechnicalSubtitle = styled(Title)`
   align-self: flex-start;
-  font-family: "Barlow Condensed", sans-serif;
+  /* font-family: "Barlow Condensed", sans-serif; */
+  font-family: var(--font-barlowcondensed);
   font-size: 30px;
   font-weight: 600;
 `;

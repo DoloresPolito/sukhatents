@@ -210,7 +210,8 @@ const RightColumn = styled.div`
   a {
     text-decoration: none;
 
-    font-family: "Barlow Condensed", sans-serif;
+    /* font-family: "Barlow Condensed", sans-serif; */
+    font-family: var(--font-barlowcondensed);
     color: #6a6f58;
     font-weight: 400;
     font-size: 15px;
@@ -244,7 +245,8 @@ const SingleRightColumn = styled.div`
   a {
     text-decoration: none;
 
-    font-family: "Barlow Condensed", sans-serif;
+    /* font-family: "Barlow Condensed", sans-serif; */
+    font-family: var(--font-barlowcondensed);
     color: #6a6f58;
     font-weight: 400;
     font-size: 15px;
@@ -262,7 +264,8 @@ const CenterText = styled.div`
   flex: 1;
   text-align: center;
   text-decoration: none;
-  font-family: "Barlow Condensed", sans-serif;
+  /* font-family: "Barlow Condensed", sans-serif; */
+  font-family: var(--font-barlowcondensed);
   font-weight: 300;
   font-size: 20px;
   line-height: 40px;

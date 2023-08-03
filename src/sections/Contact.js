@@ -141,7 +141,7 @@ const Formulario = () => {
             </Column>
           </Row>
 
-          <Row fullWidth>
+          <Row >
             <FullWidthColumn>
               <InputContainer>
                 <input
@@ -375,10 +375,11 @@ const InputContainer = styled.div`
     }
   input::placeholder {
     color: #ffffff; /* Estilos para el color del placeholder */
-    font-family: "Barlow Condensed", sans-serif;
+    /* font-family: "Barlow Condensed", sans-serif; */
+    font-family: var(--font-barlowcondensed);
     font-style: regular;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 14px;
     line-height: 10px;
   }
 `;
@@ -392,7 +393,8 @@ const Button = styled.button`
   align-self: flex-end;
 
   color: #ffffff; /* Estilos para el color del placeholder */
-  font-family: "Barlow Condensed", sans-serif;
+  /* font-family: "Barlow Condensed", sans-serif; */
+  font-family: var(--font-barlowcondensed);
   font-style: regular;
   font-weight: 600;
   font-size: 18px;
