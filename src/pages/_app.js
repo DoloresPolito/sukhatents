@@ -1,7 +1,7 @@
 import Head from "next/head";
 import GlobalStyles from "../styles/global";
 import { ParallaxProvider } from "react-scroll-parallax";
-import {Bebas_Neue, Barlow, Barlow_Condensed, Barlow_Semi_Condensed} from '@next/font/google'
+import {Bebas_Neue, Barlow_Condensed, Barlow_Semi_Condensed} from '@next/font/google'
 
 
 const bebasneue = Bebas_Neue({
@@ -62,9 +62,6 @@ const MyApp = ({ Component, pageProps }) => {
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
 
-        {/* <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com"  /> */}
- 
       </Head>
       <ParallaxProvider>
         <GlobalStyles />
