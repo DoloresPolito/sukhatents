@@ -241,11 +241,9 @@ const RingContainer = styled.div`
   /* position: relative; */
 
   div {
-    /* background-color: red; */
     height: 200px;
     width: 200px;
     margin-left: -200px;
-    /* background-color: red; */
     display: flex;
     @media screen and (max-width: 1000px) {
       margin-left: 0px;
@@ -410,7 +408,8 @@ const Row = styled.div`
     width: 300px;
   }
 
-  @media screen and (max-width: 405px) {
+  @media screen and (max-width: 434px) {
+
     width: 250px;
   }
 `;
@@ -439,7 +438,7 @@ const InputContainer = styled.div`
     border: none;
     border-bottom: 1px solid #ccc;
     background-color: #6a6f58;
-    outline: none;
+    /* outline: none; */
     color: white;
   }
 
@@ -449,12 +448,23 @@ const InputContainer = styled.div`
   }
   input::placeholder {
     color: #ffffff; /* Estilos para el color del placeholder */
-    /* font-family: "Barlow Condensed", sans-serif; */
-    font-family: var(--font-barlowcondensed);
+    font-family: "Barlow Condensed", sans-serif;
+    /* font-family: var(--font-barlowcondensed); */
     font-style: regular;
     font-weight: 400;
     font-size: 14px;
     line-height: 10px;
+  }
+
+  input:focus {
+    color: #ffffff; /* Estilos para el color del placeholder */
+    font-family: "Barlow Condensed", sans-serif;
+    /* font-family: var(--font-barlowcondensed); */
+    font-style: regular;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 10px;
+    outline: none; 
   }
 `;
 
