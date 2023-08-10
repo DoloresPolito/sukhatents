@@ -5,7 +5,7 @@ import Image from "next/image";
 import traslado from "../../public/assets/icons/compress/traslado.png";
 import montaje from "../../public/assets/icons/compress/montaje.png";
 import pisos from "../../public/assets/icons/compress/pisos.png";
-import clima from "../../public/assets/icons/clima.png";
+import clima from "../../public/assets/icons/compress/clima.png";
 import { Parallax } from "react-scroll-parallax";
 const Complements = () => {
   return (
