@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { Title, Text } from "../styles/styles";
 import Image from "next/image";
-import traslado from "../../public/assets/icons/traslado.png";
-import montaje from "../../public/assets/icons/montaje.png";
-import pisos from "../../public/assets/icons/pisos.png";
+import traslado from "../../public/assets/icons/compress/traslado.png";
+import montaje from "../../public/assets/icons/compress/montaje.png";
+import pisos from "../../public/assets/icons/compress/pisos.png";
 import clima from "../../public/assets/icons/clima.png";
 import { Parallax } from "react-scroll-parallax";
 const Complements = () => {
@@ -107,11 +107,14 @@ const Box = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   width: 320px;
   height: 370px;
   /* margin-top: -30px; */
   img {
     padding-bottom: 10px;
+    width: 250px;
+    height: 250px;
   }
 
   p {

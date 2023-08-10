@@ -2,10 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import { Title, Text } from "../styles/styles";
 import Image from "next/image";
-import front from "../../public/assets/icons/web_frente.png";
-import side from "../../public/assets/icons/web_cenital.png";
-import capacity1 from "../../public/assets/icons/web_122.png";
-import capacity2 from "../../public/assets/icons/web_152.png";
+import front from "../../public/assets/icons/comp/frente.jpg";
+import side from "../../public/assets/icons/comp/cenital.jpg";
+import capacity1 from "../../public/assets/icons/comp/122.jpg";
+import capacity2 from "../../public/assets/icons/comp/152.jpg";
 import { Parallax } from "react-scroll-parallax";
 const Technical = () => {
   return (
@@ -115,6 +115,11 @@ const TechnicalImages = styled.div`
   flex-wrap: wrap !important;
   height: auto;
   margin-left: 10px;
+
+  img{
+    height: 240px;
+    width: 310px;
+  }
 
   @media screen and (max-width: 670px) {
     flex-direction: column !important;
