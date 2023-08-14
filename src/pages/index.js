@@ -7,6 +7,7 @@ import Complements from "../sections/Complements";
 import Contact from "../sections/Contact";
 import Footer from "../sections/Footer";
 import ScrollToTop from "react-scroll-to-top";
+import { motion } from "framer-motion";
 
 export default function Home() {
   const [width, setWidth] = useState(null);
@@ -29,6 +30,12 @@ export default function Home() {
 
   return (
     <>
+          <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
       <Cover />
       <About />
       <Technical />
@@ -54,6 +61,7 @@ export default function Home() {
       )}
 
       <Footer />
+      </motion.div>
     </>
   );
 }
