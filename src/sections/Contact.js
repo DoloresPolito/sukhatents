@@ -219,13 +219,13 @@ const Formulario = () => {
         </>
       )}
 
-      <Box>
+      {/* <Box>
         <BoxText>
           CONSULTÁ LA FECHA
           <br /> DE TU EVENTO{" "}
         </BoxText>
         <Image src={calendar} alt="calendar" />
-      </Box>
+      </Box> */}
     </ContactSection>
   );
 };
@@ -258,6 +258,8 @@ const RingContainer = styled.div`
 const ContactSection = styled.div`
   width: 100%;
   height: 500px;
+  max-width: 1600px;
+  margin: 0 auto;
 
   @media screen and (max-width: 740px) {
     height: 660px;

@@ -72,6 +72,8 @@ const TechnicalSection = styled.div`
   flex-direction: column;
   justify-content: center;
   margin-bottom: 50px;
+  margin: 0 auto;
+  max-width: 1600px;
 `;
 
 const TechnicalContainer = styled.div`

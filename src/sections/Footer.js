@@ -176,6 +176,7 @@ const FooterContainer = styled.footer`
   display: flex;
   align-items: center;
   margin: 0 auto;
+  max-width: 1600px;
 `;
 
 const LeftColumn = styled.div`

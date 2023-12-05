@@ -109,7 +109,7 @@ const Navbar = () => {
 
 const NavbarSection = styled.div`
   width: 100%;
-  height: 135px;
+  height: 115px;
   background-color: #e0dcc7;
   display: flex;
   justify-content: center;
@@ -130,6 +130,8 @@ const NavbarContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 90%;
+  margin: 0 auto;
+  max-width: 1600px;
   margin: 0 auto;
 `;
 

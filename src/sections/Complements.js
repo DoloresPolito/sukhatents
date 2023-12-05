@@ -73,6 +73,8 @@ const ComplementsSection = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  max-width: 1600px;
+  margin: 0 auto;
   margin-bottom: 50px;
 `;
 

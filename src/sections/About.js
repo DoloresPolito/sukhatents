@@ -50,6 +50,8 @@ const AboutSection = styled.div`
   display: flex;
   flex-direction: row;
   padding-bottom: 50px;
+  max-width: 1600px;
+  margin: 0 auto;
 
   @media screen and (max-width: 720px) {
     flex-direction: column;

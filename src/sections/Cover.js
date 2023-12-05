@@ -21,6 +21,7 @@ const Cover = () => {
 const CoverSection = styled.div`
   width: 100%;
   height: 100vh;
+
 `;
 
 const ImageWrapper = styled.div`

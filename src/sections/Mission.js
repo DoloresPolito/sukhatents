@@ -1,16 +1,42 @@
-import React from "react";
+import React, {useEffect} from "react";
 import styled from "styled-components";
 import { Title, Text } from "../styles/styles";
 import Image from 'next/image'
 import image from '../../public/assets/newimages/m-v.jpg'
 // import { Parallax } from "react-scroll-parallax";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const Mission = () => {
+
+  const animation1 = useAnimation();
+  const { ref, inView } = useInView({ threshold: 0 });
+
+
+  useEffect(() => {
+    if (inView) {
+      animation1.start({
+        opacity: 1,
+        transition: {
+          duration: 1,
+          ease: "easeIn",
+        },
+      });
+    }
+
+    if (!inView) {
+      animation1.start({
+        opacity: 0,
+      });
+    }
+  }, [inView]);
+
+
   return (
-    <MissionSection id="mission">
+    <MissionSection id="mission"  >
          
-      <Box>
-        <div>
+      <Box ref={ref}>
+        <motion.div animate={animation1}>
           <MissionTitle>MISIÓN - VISIÓN</MissionTitle>
           <MissionText>
             En nuestra empresa, nos enfocamos en ofrecer servicios de alquiler
@@ -28,7 +54,7 @@ const Mission = () => {
             capacidad para adaptarnos a las necesidades del mercado y de
             nuestros clientes.
           </MissionText>
-        </div>
+        </motion.div>
     
       </Box>
  
@@ -50,6 +76,11 @@ const MissionSection = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  margin-top: 150px;
+  margin-bottom: 100px;
+margin: 0 auto;
+  max-width: 1600px;
+  position: relative;
   margin-top: 150px;
   margin-bottom: 100px;
 `;
